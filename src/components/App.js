@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import NavBar from './NavBar';
 import Upgrades from './Upgrades';
@@ -8,10 +9,11 @@ function App() {
   return (
     <>
       <NavBar/>
-      <p>TEST</p>
+
       <Home/>
       <Upgrades/>
       <Profile/>
+      
     </>
   );
 }
