@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import NavBar from './NavBar';
+import NewCatForm from './NewCatForm';
 import Upgrades from './Upgrades';
 import Profile from './Profile';
 
@@ -44,6 +45,9 @@ function App() {
       <Switch>
         <Route exact path = '/'>
           <Home cats={cats} addNewCat={addNewCat} handleAdopt={handleAdopt} />
+        </Route>
+        <Route path = '/newCatForm'>
+          <NewCatForm addNewCat = {addNewCat} />
         </Route>
         <Route path = '/upgrades'>
           <Upgrades/>

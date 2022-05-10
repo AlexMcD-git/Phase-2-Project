@@ -5,7 +5,8 @@ import NewCatForm from './NewCatForm'
 import TrapCat from './TrapCat'
 
 function Home({ cats, addNewCat, handleAdopt }) {
-  
+
+
   return (
     <div>Home
         <NewCatForm/>
