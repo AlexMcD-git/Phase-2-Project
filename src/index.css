@@ -3,6 +3,17 @@ body {
   background-color: rgb(46, 46, 58);
 }
 
+.navWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navLinks {
+  text-decoration: none;
+  color: lightblue;
+  padding: 1rem;
+}
+
 p {
   color: white;
   font-size: 3rem;
@@ -22,3 +33,4 @@ img {
 li {
   list-style: none;
 }
+
