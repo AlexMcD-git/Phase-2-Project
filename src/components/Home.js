@@ -6,7 +6,7 @@ function Home() {
   const [cats, setCats] = useState([])
 
   function addNewCat(cat){
-    setCats([...cats], cat)
+    setCats([...cats, cat])
   }
 
   useEffect(()=>{fetch('http://localhost:3001/cats')
@@ -19,7 +19,7 @@ function Home() {
   return (
     <div>Home
         <TrapCat addNewCat={addNewCat}/>
-        <CatList/>
+        <CatList cats = {cats} />
     </div>
   )
 }

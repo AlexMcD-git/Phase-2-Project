@@ -32,6 +32,7 @@ function TrapCat({addNewCat}) {
     .then(data=>addNewCat(data))
     updateCat()
   }
+  
   return (
     <div>TrapCat
       <button onClick={generateRandomCat}>Catch A Cat</button>
