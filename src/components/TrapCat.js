@@ -20,7 +20,6 @@ function TrapCat() {
       data['results'][0]['name']['first']!==data['results'][0]['name']['first'].toLowerCase()?setNewCat({name:data['results'][0]['name']['first'], image:url}):updateCat()})
     }
 
-  console.log(newCat)
   function generateRandomCat(){
     fetch("http://localhost:3001/cats",{
       method:"POST",
@@ -30,14 +29,12 @@ function TrapCat() {
       body: JSON.stringify(newCat)
     })
     .then(r=>r.json())
-    .then(data=>console.log(data))
+    .then(data=>addNewCat(data))
     updateCat()
   }
   return (
     <div>TrapCat
-      <button onClick={
-        generateRandomCat
-      }>Catch A Cat</button>
+      <button onClick={generateRandomCat}>Catch A Cat</button>
     </div>
   )
 }

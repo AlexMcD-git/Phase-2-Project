@@ -5,6 +5,10 @@ import TrapCat from './TrapCat'
 function Home() {
   const [cats, setCats] = useState([])
 
+  function addNewCat(cat){
+    setCats([...cats], cat)
+  }
+
   useEffect(()=>{fetch('http://localhost:3001/cats')
   .then(r=>r.json())
   .then(data=>setCats(data))}
@@ -14,7 +18,7 @@ function Home() {
 
   return (
     <div>Home
-        <TrapCat/>
+        <TrapCat addNewCat={addNewCat}/>
         <CatList/>
     </div>
   )
