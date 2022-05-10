@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import CatList from './CatList'
 import TrapCat from './TrapCat'
@@ -6,7 +7,7 @@ function Home() {
   const [cats, setCats] = useState([])
 
   function addNewCat(cat){
-    setCats([...cats], cat)
+    setCats([...cats, cat])
   }
 
   useEffect(()=>{fetch('http://localhost:3001/cats')
@@ -14,12 +15,13 @@ function Home() {
   .then(data=>setCats(data))}
   ,[])
 
-  // console.log(cats)
+
+  console.log(cats)
 
   return (
     <div>Home
         <TrapCat addNewCat={addNewCat}/>
-        <CatList/>
+        <CatList cats = {cats}/>
     </div>
   )
 }

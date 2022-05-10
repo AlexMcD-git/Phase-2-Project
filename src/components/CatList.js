@@ -1,10 +1,10 @@
 import React from 'react'
 import CatCard from './CatCard'
 
-function CatList() {
+function CatList({ cats }) {
   return (
     <div>CatList
-        <ul>{<CatCard/>}</ul>
+        <div className='imgWrapper'>{cats.map(cat=> <CatCard key = {cat.id} cat = {cat}/>)}</div>
     </div>
   )
 }
