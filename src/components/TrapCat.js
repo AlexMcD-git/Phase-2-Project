@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function TrapCat() {
+function TrapCat({addNewCat}) {
   const [newCat, setNewCat] = useState({
     name:"",
     image:""
