@@ -47,7 +47,7 @@ function App() {
         <Route exact path = '/'>
           <Home cats={cats} addNewCat={addNewCat} handleAdopt={handleAdopt} />
         </Route>
-        <Route path = '/cats/new' component = {NewCatForm}>
+        <Route path = '/cats/new'>
           <NewCatForm addNewCat = {addNewCat} />
         </Route>
         <Route path = '/upgrades'>
