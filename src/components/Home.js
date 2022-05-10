@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+//import { render } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import CatList from './CatList'
 import NewCatForm from './NewCatForm'
@@ -9,7 +9,7 @@ function Home({ cats, addNewCat, handleAdopt }) {
 
   return (
     <div>Home
-        <NewCatForm/>
+        <NewCatForm addNewCat={addNewCat}/>
         <TrapCat addNewCat={addNewCat}/>
         <CatList cats = {cats} handleAdopt={handleAdopt}/>
     </div>
