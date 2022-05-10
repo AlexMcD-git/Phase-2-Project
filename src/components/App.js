@@ -8,17 +8,10 @@ import Profile from './Profile';
 
 function App() {
   const [cats, setCats] = useState([])
-  const [profile, setProfile] = useState({
-    name:"",
-    money:0,
-    score:0
-  })
-  console.log(profile)
+  const [profile, setProfile] = useState({})
+  const [upgrades, setUpgrades] = useState([])
 
-  function addNewCat(cat){
-    setCats([...cats, cat])
-  }
-  useEffect(()=>{fetch('http://localhost:3001/profile')
+  useEffect(()=>{fetch('http://localhost:3001/profile/1')
   .then(r=>r.json())
   .then(setProfile)}
   ,[])
@@ -28,6 +21,28 @@ function App() {
   .then(data=>setCats(data))}
   ,[])
 
+  useEffect(()=>{fetch('http://localhost:3001/upgrades')
+  .then(r=>r.json())
+  .then(setUpgrades)}
+  ,[])
+
+  function addNewCat(cat){
+    setCats([...cats, cat])
+  }
+
+  function handleMoney(moneyChange, scoreChange){
+    fetch(`http://localhost:3001/profile/1`,{
+      method:"PATCH",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({"money": profile.money+moneyChange, "score": profile.score+scoreChange})
+    })
+    .then(r=>r.json())
+    .then(data=>setProfile({...data}))
+  }
+  
+
   function handleAdopt(id){
     fetch(`http://localhost:3001/cats/${id}`,{
       method:"DELETE"
@@ -36,8 +51,23 @@ function App() {
     setCats([...cats].filter(cat=>{
       return cat.id!==id
     }))
+    handleMoney(100,1)
+  }
 
-
+  function purchaseUpgrade(id, cost){
+    console.log(id, -cost)
+    handleMoney(-cost, 0)
+    fetch(`http://localhost:3001/upgrades/${id}`,{
+      method:"PATCH",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({"level": upgrades[id].level+1})
+    })
+    .then(r=>r.json())
+    .then(data=>setUpgrades([...upgrades].map(upgrade=>{
+      return upgrade.id!==id?upgrade:data
+    })))
   }
 
   return (
@@ -51,7 +81,7 @@ function App() {
           <NewCatForm addNewCat = {addNewCat} />
         </Route>
         <Route path = '/upgrades'>
-          <Upgrades/>
+          <Upgrades money={profile.money} upgrades={upgrades} purchaseUpgrade={purchaseUpgrade}/>
         </Route>
         <Route path = '/profile'>
           <Profile/>

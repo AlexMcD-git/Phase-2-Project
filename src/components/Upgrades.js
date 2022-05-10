@@ -1,8 +1,13 @@
 import React from 'react'
+import UpgradeCard from './UpgradeCard'
+function Upgrades({ money, upgrades, purchaseUpgrade}) {
 
-function Upgrades() {
   return (
-    <div>Upgrades</div>
+    <div>
+      <p>Current Money: ${money}</p>
+      <h1>Upgrades</h1>
+      {upgrades.map(upgrade=><UpgradeCard key={upgrade.id} upgrade={upgrade} purchaseUpgrade={purchaseUpgrade} money={money}/>)}
+    </div>
   )
 }
 
