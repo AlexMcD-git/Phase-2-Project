@@ -6,18 +6,19 @@ function TrapCat({addNewCat}) {
     image:""
   })
 
+  console.log(newCat)
+
   useEffect(()=>updateCat,[])
 
   function updateCat(){
-    let url=""
     fetch("https://api.thecatapi.com/v1/images/search")
     .then(r=>r.json())
-    .then(data=>url=data[0]['url'])
-
+    .then(data1=>{
     fetch("https://randomuser.me/api/")
     .then(r=>r.json())
-    .then(data=>{
-      data['results'][0]['name']['first']!==data['results'][0]['name']['first'].toLowerCase()?setNewCat({name:data['results'][0]['name']['first'], image:url}):updateCat()})
+    .then(data2=>{
+      data2['results'][0]['name']['first']!==data2['results'][0]['name']['first'].toLowerCase()?setNewCat({name:data2['results'][0]['name']['first'], image:data1[0]['url']}):updateCat()})})
+    
     }
 
   function generateRandomCat(){

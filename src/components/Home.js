@@ -3,27 +3,7 @@ import React, { useEffect, useState } from 'react'
 import CatList from './CatList'
 import TrapCat from './TrapCat'
 
-function Home() {
-  const [cats, setCats] = useState([])
-
-  function addNewCat(cat){
-    setCats([...cats, cat])
-  }
-
-  useEffect(()=>{fetch('http://localhost:3001/cats')
-  .then(r=>r.json())
-  .then(data=>setCats(data))}
-  ,[])
-
-  function handleAdopt(id){
-    fetch(`http://localhost:3001/cats/${id}`,{
-      method:"DELETE"
-    })
-    .then(`Cat ${id} found a home.`)
-    setCats([...cats].filter(cat=>{
-      return cat.id!==id
-    }))
-  }
+function Home({ cats, addNewCat, handleAdopt }) {
 
   console.log(cats)
 
