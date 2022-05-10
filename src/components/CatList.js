@@ -3,8 +3,8 @@ import CatCard from './CatCard'
 
 function CatList({ cats }) {
   return (
-    <div>
-        <div className = 'imgWrapper'>{cats.map(cat => <CatCard key = {cat.id} cat = {cat} />)}</div>
+    <div>CatList
+        <div className='imgWrapper'>{cats.map(cat=> <CatCard key = {cat.id} cat = {cat}/>)}</div>
     </div>
   )
 }

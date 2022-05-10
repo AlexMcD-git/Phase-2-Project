@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function CatCard({ cat }) {
-  const {name, image}=cat
+  const {name, image, id}=cat
+
   return (
     <div>
       <p>{cat.name}</p>
