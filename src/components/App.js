@@ -7,10 +7,20 @@ import Profile from './Profile';
 
 function App() {
   const [cats, setCats] = useState([])
+  const [profile, setProfile] = useState({
+    name:"",
+    money:0,
+    score:0
+  })
+  console.log(profile)
 
   function addNewCat(cat){
     setCats([...cats, cat])
   }
+  useEffect(()=>{fetch('http://localhost:3001/profile')
+  .then(r=>r.json())
+  .then(setProfile)}
+  ,[])
 
   useEffect(()=>{fetch('http://localhost:3001/cats')
   .then(r=>r.json())
@@ -25,6 +35,7 @@ function App() {
     setCats([...cats].filter(cat=>{
       return cat.id!==id
     }))
+
   }
 
   return (

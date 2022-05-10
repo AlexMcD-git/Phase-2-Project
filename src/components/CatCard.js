@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 function CatCard({ cat, handleAdopt }) {
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  
   const {name, image, id}=cat
-
   const [catStats, setCatStats] = useState({
-    happiness:98,
+    happiness:getRandomInt(20),
     hunger:90
   })
 

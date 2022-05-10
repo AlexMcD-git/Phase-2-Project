@@ -6,8 +6,6 @@ function TrapCat({addNewCat}) {
     image:""
   })
 
-  console.log(newCat)
-
   useEffect(()=>updateCat,[])
 
   function updateCat(){
