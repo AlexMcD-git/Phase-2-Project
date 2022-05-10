@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import CatList from './CatList'
+import NewCatForm from './NewCatForm'
 import TrapCat from './TrapCat'
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
 
   return (
     <div>Home
+        <NewCatForm/>
         <TrapCat addNewCat={addNewCat}/>
         <CatList cats = {cats}/>
     </div>
@@ -27,3 +29,6 @@ function Home() {
 }
 
 export default Home
+
+
+

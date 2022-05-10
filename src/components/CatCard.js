@@ -5,8 +5,8 @@ function CatCard({ cat }) {
 
   return (
     <div>
-      <p>{cat.name}</p>
-      <img src={cat.image}></img>
+      <p>{name}</p>
+      <img src={image}></img>
     </div>
   )
 }
