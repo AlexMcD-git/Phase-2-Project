@@ -9,7 +9,9 @@ p {
 }
 
 img {
-  max-width: 400px;
+  width: 400px;
+  height: 550px;
+  object-fit: cover;
 }
 
 .imgWrapper {
