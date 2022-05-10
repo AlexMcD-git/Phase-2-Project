@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function NewCatForm() {
+function NewCatForm({ addNewCat }) {
     const initialState = {
         name: '',
         image: ''
@@ -16,6 +16,18 @@ function NewCatForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        fetch ('http://localhost:3001/cats', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formState)
+        })
+        .then ((resp) => resp.json())
+        .then ((newCat) => {
+            addNewCat(newCat)
+            setFormState(initialState)
+        })
     }
 
     return (

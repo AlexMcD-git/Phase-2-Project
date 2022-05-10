@@ -39,8 +39,8 @@ function CatCard({ cat, handleAdopt }) {
 
   return (
     <div>
-      <p>{cat.name}</p>
-      <img src={cat.image}></img>
+      <p>{name}</p>
+      <img src={image}></img>
       <ul>
         <li>{catStats.happiness>=100? 
       <button onClick={()=>handleAdopt(id)}>Adopt</button>:null}</li>

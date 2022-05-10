@@ -6,7 +6,6 @@ import TrapCat from './TrapCat'
 
 function Home({ cats, addNewCat, handleAdopt }) {
 
-  console.log(cats)
 
   return (
     <div>Home
