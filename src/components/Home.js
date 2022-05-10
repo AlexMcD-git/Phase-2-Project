@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import CatList from './CatList'
 import TrapCat from './TrapCat'
 
