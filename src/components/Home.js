@@ -15,13 +15,22 @@ function Home() {
   .then(data=>setCats(data))}
   ,[])
 
+  function handleAdopt(id){
+    fetch(`http://localhost:3001/cats/${id}`,{
+      method:"DELETE"
+    })
+    .then(`Cat ${id} found a home.`)
+    setCats([...cats].filter(cat=>{
+      return cat.id!==id
+    }))
+  }
 
   console.log(cats)
 
   return (
     <div>Home
         <TrapCat addNewCat={addNewCat}/>
-        <CatList cats = {cats}/>
+        <CatList cats = {cats} handleAdopt={handleAdopt}/>
     </div>
   )
 }
