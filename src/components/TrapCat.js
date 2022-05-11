@@ -6,7 +6,7 @@ function TrapCat({addNewCat}) {
     image:""
   })
 
-  useEffect(()=>updateCat,[])
+  useEffect(updateCat,[])
 
   function updateCat(){
     fetch("https://api.thecatapi.com/v1/images/search")
