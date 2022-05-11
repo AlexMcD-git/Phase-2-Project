@@ -7,6 +7,9 @@ function NavBar() {
       <NavLink className = 'navLinks' to = '/cats/new'>
         Add Custom Cat
       </NavLink>
+      <NavLink className = 'navLinks' to = '/upgrades'>
+        Upgrades
+      </NavLink>
     </div>
   )
 }
