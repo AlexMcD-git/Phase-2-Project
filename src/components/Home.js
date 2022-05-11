@@ -6,7 +6,7 @@ function Home({ cats, addNewCat, handleAdopt }) {
 
 
   return (
-    <div>Home
+    <div>
         <TrapCat addNewCat={addNewCat}/>
         <CatList cats = {cats} handleAdopt={handleAdopt}/>
     </div>

@@ -33,7 +33,7 @@ function TrapCat({addNewCat}) {
   }
   
   return (
-    <div>TrapCat
+    <div>
       <button onClick={generateRandomCat}>Catch A Cat</button>
     </div>
   )
