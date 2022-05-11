@@ -75,7 +75,7 @@ function App() {
       <NavBar/>
       <Switch>
         <Route exact path = '/'>
-          <Home cats={cats} addNewCat={addNewCat} handleAdopt={handleAdopt} />
+          <Home cats={cats} addNewCat={addNewCat} handleAdopt={handleAdopt} upgrades={upgrades}/>
         </Route>
         <Route path = '/cats/new'>
           <NewCatForm addNewCat = {addNewCat} />

@@ -6,7 +6,7 @@ function TrapCat({addNewCat}) {
     image:""
   })
 
-  useEffect(()=>updateCat,[])
+  useEffect(updateCat,[])
 
   function updateCat(){
     fetch("https://api.thecatapi.com/v1/images/search")
@@ -33,7 +33,7 @@ function TrapCat({addNewCat}) {
   }
   
   return (
-    <div>TrapCat
+    <div>
       <button onClick={generateRandomCat}>Catch A Cat</button>
     </div>
   )
