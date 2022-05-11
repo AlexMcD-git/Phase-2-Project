@@ -33,9 +33,11 @@ function NewCatForm({ addNewCat }) {
     return (
         <>
             <form onSubmit = {handleSubmit}>
-            <input type="text" name="name"  value = {formState.name} onChange = {handleChange} />
-            <input type="text" name="image" value = {formState.image} onChange = {handleChange} />
-            <button type="submit"> Add Cat </button>
+                <label> Name: </label>
+                <input type="text" name="name"  value = {formState.name} onChange = {handleChange} />
+                <label> Image: </label>
+                <input type="text" name="image" value = {formState.image} onChange = {handleChange} />
+                <button type="submit"> Add Cat </button>
             </form>
         </>
   )
