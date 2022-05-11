@@ -34,7 +34,7 @@ function TrapCat({addNewCat}) {
   
   return (
     <div class = 'trap'>
-      <button class = 'trapBtn' onClick={generateRandomCat}>Catch A Cat</button>
+      <button class = 'btn' onClick={generateRandomCat}>Catch A Cat</button>
     </div>
   )
 }

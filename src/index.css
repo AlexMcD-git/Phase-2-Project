@@ -30,17 +30,12 @@ body {
 .navLinks:focus,
 .navLinks:hover {
   color: rgb(194, 188, 255);
-  background-color: rgb(103, 151, 141);
+  background-color: rgba(103, 151, 141, 0.74);
 }
 
 .trap {
   text-align: center;
   margin: 1rem 0;
-}
-
-.trapBtn {
-  font-size: 1.5rem;
-  padding: 0.3rem 0.5rem;
 }
 
 p {
