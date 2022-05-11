@@ -5,11 +5,14 @@ import NavBar from './NavBar';
 import NewCatForm from './NewCatForm';
 import Upgrades from './Upgrades';
 import Profile from './Profile';
+import useSound from 'use-sound';
+import yay from '../sounds/yay.mp3'
 
 function App() {
   const [cats, setCats] = useState([])
   const [profile, setProfile] = useState({})
   const [upgrades, setUpgrades] = useState([])
+  const [playSound] = useSound(yay, { volume: 0.3 })
 
   useEffect(()=>{fetch('http://localhost:3001/profile/1')
   .then(r=>r.json())
@@ -52,6 +55,7 @@ function App() {
       return cat.id!==id
     }))
     handleMoney(100,1)
+    playSound()
   }
 
   function purchaseUpgrade(id, cost){

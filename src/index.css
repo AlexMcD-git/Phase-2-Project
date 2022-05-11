@@ -17,12 +17,20 @@ body {
   background-color: rgb(87, 107, 87);
 }
 
-
 .navLinks {
   text-decoration: none;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
   font-size: 2rem;
+  border-radius: 6px;
+}
+
+.navLinks.active,
+.navLinks:focus,
+.navLinks:hover {
+  color: rgb(255, 196, 225);
+  background-color: rgb(103, 151, 141);
 }
 
 .trap {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
+
 function CatCard({ cat, handleAdopt, upgrades}) {
+
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -31,6 +33,7 @@ function CatCard({ cat, handleAdopt, upgrades}) {
     })
   }
 
+
   useEffect(() => {
     const timerID = setTimeout(statsUpdate, 1000)
     return function cleanup() {
@@ -46,7 +49,7 @@ function CatCard({ cat, handleAdopt, upgrades}) {
       <img src={image}></img>
       <ul>
         <li>{catStats.happiness>=100? 
-      <button className = 'liBtns' onClick={()=>handleAdopt(id)}>Adopt</button>:null}</li>
+        <button className = 'liBtns' onClick={()=>handleAdopt(id)}>Adopt</button>:null}</li>
 
         {catStats.happiness<100?
         <><li>Happiness: {catStats.happiness} / 100 {catStats.happiness<70?<button className = 'liBtns' onClick={petCat}>Pet Cat</button>:null}</li>
