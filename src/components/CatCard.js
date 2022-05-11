@@ -49,11 +49,11 @@ function CatCard({ cat, handleAdopt, upgrades}) {
       <img src={image}></img>
       <ul>
         <li>{catStats.happiness>=100? 
-        <button className = 'liBtns' onClick={()=>handleAdopt(id)}>Adopt</button>:null}</li>
+        <button className = 'btn' onClick={()=>handleAdopt(id)}>Adopt</button>:null}</li>
 
         {catStats.happiness<100?
-        <><li>Happiness: {catStats.happiness} / 100 {catStats.happiness<70?<button className = 'liBtns' onClick={petCat}>Pet Cat</button>:null}</li>
-        <li>Hunger: {catStats.hunger} / 100  {catStats.hunger>20?<button className = 'liBtns' onClick={feedCat}>Feed</button>:null}</li></>
+        <><li>Happiness: {catStats.happiness} / 100 {catStats.happiness<70?<button className = 'btn' onClick={petCat}>Pet Cat</button>:null}</li>
+        <li>Hunger: {catStats.hunger} / 100  {catStats.hunger>20?<button className = 'btn' onClick={feedCat}>Feed</button>:null}</li></>
         :null}
       </ul>
     </div>

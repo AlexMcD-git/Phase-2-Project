@@ -35,7 +35,7 @@ function NewCatForm({ addNewCat }) {
             <form className = 'form' onSubmit = {handleSubmit}>
                 <input type="text" id = 'input' name="name"  placeholder = "Cat's name" value = {formState.name} onChange = {handleChange} /><br />
                 <input type="text" id = 'input' name="image" placeholder = "Image link" value = {formState.image} onChange = {handleChange} /><br />
-                <button className = 'formBtn' type="submit"> Add Cat </button>
+                <button className = 'btn' type="submit"> Add Cat </button>
             </form>
         </div>
   )
