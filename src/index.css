@@ -29,7 +29,7 @@ body {
 .navLinks.active,
 .navLinks:focus,
 .navLinks:hover {
-  color: rgb(255, 196, 225);
+  color: rgb(194, 188, 255);
   background-color: rgb(103, 151, 141);
 }
 
@@ -82,3 +82,27 @@ li {
   padding: 0.2rem 0.3rem;
 }
 
+.form {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+#input {
+  height: 60px;
+  width: 900px;
+  font-size: 1.7rem;
+}
+
+#input:focus {
+  background-color: rgb(219, 214, 255);;
+}
+
+.formBtn {
+  font-size: 1.4rem;
+  padding: 0.3rem 0.5rem;
+  margin-top: 1rem;
+}
+
+.formBtn:hover {
+  background-color: rgb(204, 198, 255);
+}
