@@ -17,22 +17,25 @@ body {
   background-color: rgb(87, 107, 87);
 }
 
-
 .navLinks {
   text-decoration: none;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
   font-size: 2rem;
+  border-radius: 6px;
+}
+
+.navLinks.active,
+.navLinks:focus,
+.navLinks:hover {
+  color: rgb(194, 188, 255);
+  background-color: rgba(103, 151, 141, 0.74);
 }
 
 .trap {
   text-align: center;
   margin: 1rem 0;
-}
-
-.trapBtn {
-  font-size: 1.5rem;
-  padding: 0.3rem 0.5rem;
 }
 
 p {
@@ -64,13 +67,36 @@ ul {
 li {
   list-style: none;
   margin: 0.5rem auto;
-  font-size: 1.3rem;
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+
+.form {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+#input {
+  height: 60px;
+  width: 900px;
+  font-size: 1.7rem;
+}
+
+#input:focus {
+  background-color: rgb(219, 214, 255);;
+}
+
+.btn {
+  font-size: 1.4rem;
+  padding: 0.3rem 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background-color: rgb(204, 198, 255);
+}
+
+.upgrades {
   text-align: center;
 }
-
-.liBtns {
-  font-size: 1.2rem;
-  margin: 0 0.5rem;
-  padding: 0.2rem 0.3rem;
-}
-

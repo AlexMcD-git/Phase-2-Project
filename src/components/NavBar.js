@@ -4,16 +4,16 @@ import { NavLink} from 'react-router-dom'
 function NavBar() {
   return (
     <div className = 'navWrapper'>
-      <NavLink className = 'navLinks' to = '/'>
+      <NavLink className = 'navLinks' exact to = '/'>
         Home
       </NavLink>
-      <NavLink className = 'navLinks' to = '/cats/new'>
+      <NavLink className = 'navLinks' exact to = '/cats/new'>
         Add Custom Cat
       </NavLink>
-      <NavLink className = 'navLinks' to = '/upgrades'>
+      <NavLink className = 'navLinks' exact to = '/upgrades'>
         Upgrades
       </NavLink>
-      <NavLink className = 'navLinks' to = '/profile'>
+      <NavLink className = 'navLinks' exact to = '/profile'>
         Profile
       </NavLink>
     </div>
