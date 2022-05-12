@@ -74,12 +74,12 @@ function Profile({ profile, upgrades, cats, addNewCat, handleMoney }) {
   // })
 }
   return (
-    <div>
-      <h1>Welcome, {name}!</h1>
-      <h2>So far you have helped {score} cats find their furever home.</h2>
-      <h2>You have ${money}.</h2>
-      <h4>Click the button to restart. This will reset money and score.</h4>
-      <button onClick={()=>restartGame()}>Reset Progress</button>
+    <div className = 'profileWrap'>
+      <h1 className = 'welcomeH1'><span className = 'welcome'>Welcome, {name}!</span></h1>
+      <h2 className = 'scoreH2'>So far, you have helped <span className = 'profileVal'>{score}</span> cats find their furever home!</h2>
+      <h2 className = 'moneyH2'>You have <span className = 'profileVal'>${money}</span>.</h2>
+      <h4 className = 'restartH4'>Click the button to restart. This will reset money and score.</h4>
+      <button className = 'btn' onClick={()=>restartGame()}>Reset Progress</button>
     </div>
   )
 }

@@ -9,9 +9,12 @@ function CatCard({ cat, handleAdopt, upgrades}) {
   
   const {name, image, id}=cat
   const [catStats, setCatStats] = useState({
-    happiness:getRandomInt(500),
-    hunger:getRandomInt(110)
+    happiness:getRandomInt(5),
+    hunger:getRandomInt(5)
   })
+
+  // happiness:getRandomInt(500),
+  // hunger:getRandomInt(110)
 
   function feedCat(){
     setCatStats({...catStats,
@@ -44,8 +47,8 @@ function CatCard({ cat, handleAdopt, upgrades}) {
 
 
   return (
-    <div>
-      <p>{name}</p>
+    <div className ='card'>
+      <p className = 'catName'>{name}</p>
       <img src={image}></img>
       <ul>
         <li>{catStats.happiness>=100? 
@@ -53,7 +56,7 @@ function CatCard({ cat, handleAdopt, upgrades}) {
 
         {catStats.happiness<100?
         <><li>Happiness: {catStats.happiness} / 100 {catStats.happiness<70?<button className = 'btn' onClick={petCat}>Pet Cat</button>:null}</li>
-        <li>Hunger: {catStats.hunger} / 100  {catStats.hunger>20?<button className = 'btn' onClick={feedCat}>Feed</button>:null}</li></>
+          <li>Hunger: {catStats.hunger} / 100  {catStats.hunger>20?<button className = 'btn' onClick={feedCat}>Feed</button>:null}</li></>
         :null}
       </ul>
     </div>
