@@ -11,15 +11,22 @@ function App() {
   const [profile, setProfile] = useState({})
   const [upgrades, setUpgrades] = useState([])
 
+  console.log(cats)
+
+  function fetchCats(){
+  fetch('http://localhost:3001/cats')
+  .then(r=>r.json())
+  .then(setCats)
+  }
+
+  useEffect(()=>{fetchCats()},[])
+
   useEffect(()=>{fetch('http://localhost:3001/profile/1')
   .then(r=>r.json())
   .then(setProfile)}
   ,[])
 
-  useEffect(()=>{fetch('http://localhost:3001/cats')
-  .then(r=>r.json())
-  .then(data=>setCats(data))}
-  ,[])
+  useEffect(()=>{fetchCats()},[])
 
   useEffect(()=>{fetch('http://localhost:3001/upgrades')
   .then(r=>r.json())
@@ -84,7 +91,7 @@ function App() {
           <Upgrades money={profile.money} upgrades={upgrades} purchaseUpgrade={purchaseUpgrade}/>
         </Route>
         <Route path = '/profile'>
-          <Profile/>
+          <Profile profile={profile} upgrades={upgrades} cats={cats} addNewCat={addNewCat} setCats={setCats} fetchCats={fetchCats}/>
         </Route>
       </Switch>
     </>
