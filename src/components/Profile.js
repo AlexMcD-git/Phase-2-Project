@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Profile({ profile, upgrades, cats, addNewCat, setCats }) {
+function Profile({ profile, upgrades, cats, addNewCat, handleMoney }) {
   const { id, name, money, score } = profile
 
   // const freshProfile = {
@@ -40,7 +40,7 @@ function Profile({ profile, upgrades, cats, addNewCat, setCats }) {
   //     body: JSON.stringify(freshCats[1])
   //   })
   //   .then(r=>r.json())
-  //   .then(setCats(freshCats))
+  //   .then(data=>console.log(data))
   // }
 
 // async function deleteCat(catID){
@@ -48,7 +48,8 @@ function Profile({ profile, upgrades, cats, addNewCat, setCats }) {
 //     method: "DELETE",
 //   })}
 
-//   async function restartGame() {
+  async function restartGame() {
+    handleMoney(-money, -score)
     // cats.forEach(cat=>{
     //   deleteCat(cat.id)
     // })
@@ -60,23 +61,25 @@ function Profile({ profile, upgrades, cats, addNewCat, setCats }) {
 //     },
 //     body:JSON.stringify(freshProfile)
 //   })
-//   upgrades.forEach(upgrade=>{
-//     fetch(`http://localhost:3001/upgrades/${upgrade.id}`,{
-//     method:"PATCH",
-//     headers:{
-//       'Content-type': 'application/json'
-//     },
-//     body:JSON.stringify({level:1})
-//   })})
-// }
+  // upgrades.forEach(upgrade=>{
+  //   fetch(`http://localhost:3001/upgrades/${upgrade.id}`,{
+  //   method:"PATCH",
+  //   headers:{
+  //     'Content-type': 'application/json'
+  //   },
+  //   body:JSON.stringify({level:1})
+  // })
+  // .then(res=>res.json())
+  // .then(data=>console.log(data))
+  // })
+}
   return (
     <div>
       <h1>Welcome, {name}!</h1>
       <h2>So far you have helped {score} cats find their furever home.</h2>
       <h2>You have ${money}.</h2>
-      <h4>Click the button to restart. This will reset cats, money, and score.</h4>
-      <button>
-          Reset Progress.</button>
+      <h4>Click the button to restart. This will reset money and score.</h4>
+      <button onClick={()=>restartGame()}>Reset Progress</button>
     </div>
   )
 }

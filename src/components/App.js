@@ -95,7 +95,7 @@ function App() {
           <Upgrades money={profile.money} upgrades={upgrades} purchaseUpgrade={purchaseUpgrade}/>
         </Route>
         <Route path = '/profile'>
-          <Profile profile={profile} upgrades={upgrades} cats={cats} addNewCat={addNewCat} setCats={setCats} fetchCats={fetchCats}/>
+          <Profile profile={profile} upgrades={upgrades} cats={cats} addNewCat={addNewCat} fetchCats={fetchCats} handleMoney={handleMoney}/>
         </Route>
       </Switch>
     </>
