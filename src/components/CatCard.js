@@ -9,7 +9,7 @@ function CatCard({ cat, handleAdopt, upgrades}) {
   
   const {name, image, id}=cat
   const [catStats, setCatStats] = useState({
-    happiness:getRandomInt(500),
+    happiness:getRandomInt(30),
     hunger:getRandomInt(110)
   })
 
